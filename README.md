@@ -15,9 +15,9 @@ Requirements
 Quick Start
 -----------
 ```
-$ docker run --name ocserv -d -p 443:443/tcp -p 443:443/udp \
-             -e OC_CERT=domain.crt -e OC_KEY=domain.key     \
-             -v /dir-to-cert:/etc/ocserv/cert               \
+$ docker run --name ocserv -d -p 443:443/tcp -p 443:443/udp       \
+             -v /dir-to-cert:/etc/ocserv/cert --cap-add=NET_ADMIN \
+             -e OC_CERT=domain.crt -e OC_KEY=domain.key           \
              -e OC_SECRET="user:P@SSw0rd" grffio/ocserv
 ```
 - Supported Environment variables:

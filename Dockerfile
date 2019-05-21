@@ -1,5 +1,5 @@
 FROM alpine:3.9 as builder
-ARG OCSERV_VER="0.12.2"
+ARG OCSERV_VER="0.12.3"
 WORKDIR /ocserv
 RUN apk add -U curl g++ gnutls-dev gpgme libev-dev \
     libnl3-dev libseccomp-dev linux-headers \

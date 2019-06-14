@@ -30,3 +30,5 @@ $ docker run --name ocserv -d -p 443:443/tcp -p 443:443/udp       \
 
 - Exposed Ports:
   - 443/tcp 443/udp
+
+An example how to use with docker-compose [shadownet-compose](https://github.com/grffio/shadownet-compose)

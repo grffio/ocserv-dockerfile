@@ -23,7 +23,7 @@ _checkEnv() {
 	    fi
         if [ -z "${OC_NETWORK}" ]; then
 	        export OC_NETWORK="10.24.35.0"
-	    fi
+        fi
     fi
 }
 

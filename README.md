@@ -1,5 +1,9 @@
 # ocserv-dockerfile
-Dockerfile for "ocserv" SSL VPN server on Alpine Linux
+Dockerfile for Openconnect VPN Server on Alpine Linux
+
+Features
+--------
+- It is possible to specify multiple users with their passwords
 
 Build
 -----

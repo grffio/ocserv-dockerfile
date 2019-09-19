@@ -10,7 +10,7 @@ Build
 ```
 $ docker build -t grffio/ocserv .
 ```
-- Supported Args: `OCSERV_VER=0.12.3`
+- Supported Args: `OCSERV_VER=0.12.4`
 
 Requirements
 ------------

@@ -9,20 +9,20 @@ _randPass() {
 _checkEnv() {
     certdir="/etc/ocserv/cert"
     if [ -z "${OC_CERT}" ] || [ -z "${OC_KEY}" ]; then
-    	echo "Error: Variables 'OC_CERT' or 'OC_KEY' is not specified!"
+        echo "Error: Variables 'OC_CERT' or 'OC_KEY' is not specified!"
         exit 1
     elif [ ! -f ${certdir}/${OC_CERT} ] || [ ! -f ${certdir}/${OC_KEY} ]; then
             echo "Error: not found certificate or key file!"
             exit 1
     else
         if [ -z "${OC_MAXCL}" ]; then
-	        export OC_MAXCL="4"
-	    fi
+            export OC_MAXCL="4"
+        fi
         if [ -z "${OC_MAXSCL}" ]; then
-	       export OC_MAXSCL="2"
-	    fi
+            export OC_MAXSCL="2"
+        fi
         if [ -z "${OC_NETWORK}" ]; then
-	        export OC_NETWORK="10.24.35.0"
+            export OC_NETWORK="10.24.35.0"
         fi
     fi
 }
@@ -91,3 +91,4 @@ _credCreate
 _configAmend
 _startOCserv
 _healthCheck
+

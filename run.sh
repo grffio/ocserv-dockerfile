@@ -36,6 +36,11 @@ _sysPrep() {
     fi
     iptables -t nat -A POSTROUTING -j MASQUERADE
     iptables -A FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
+
+    if [ "${OC_RELOAD}" == "true" ]; then
+        echo -e "#!/usr/bin/env sh\npkill -HUP ocserv" > /etc/periodic/weekly/ocserv_reload
+        chmod +x /etc/periodic/weekly/ocserv_reload
+    fi
 }
 
 # Create specified users or a test user

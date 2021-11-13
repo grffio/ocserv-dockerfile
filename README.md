@@ -31,6 +31,7 @@ $ docker run --name ocserv -d -p 443:443/tcp -p 443:443/udp       \
   - `OC_MAXSCL`  - Limit the number of identical clients (default: 2)
   - `OC_NETWORK` - The pool of addresses that leases will be given from (default: 10.24.35.0)
   - `OC_SECRET`  - Login and password for ocserv users, format: user1:pass1,user2:pass2 (desirable)
+  - `OC_RELOAD`  - Periodically (weekly) reload ocserv config, necessary if periodically renewed certificates are used (default: false)
 
 - Exposed Ports:
   - 443/tcp 443/udp

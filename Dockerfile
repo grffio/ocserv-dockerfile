@@ -1,5 +1,5 @@
-FROM alpine:3.12 as builder
-ARG OCSERV_VER="1.1.2"
+FROM alpine:3.14 as builder
+ARG OCSERV_VER="1.1.3"
 WORKDIR /ocserv
 RUN apk add -U curl g++ gnutls-dev gpgme libev-dev \
     libnl3-dev libseccomp-dev linux-headers \
@@ -7,7 +7,7 @@ RUN apk add -U curl g++ gnutls-dev gpgme libev-dev \
     curl -LO ftp://ftp.infradead.org/pub/ocserv/ocserv-${OCSERV_VER}.tar.xz && \
     tar -xJf ocserv-${OCSERV_VER}.tar.xz -C /ocserv --strip-components=1 && \
     ./configure && make
-FROM alpine:3.12
+FROM alpine:3.14
 RUN apk add -U gnutls-dev libseccomp-dev lz4-dev libev-dev linux-pam-dev iptables tini
 COPY --from=builder /ocserv/src/ocserv /usr/local/bin/
 COPY --from=builder /ocserv/src/ocpasswd /usr/local/bin/
